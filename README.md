@@ -45,7 +45,7 @@ Categorias listadas mais abaixo.
           "pch" : " ",
           "site" : " ",
           "time" : " ",
-          "verbo" : " "
+          "verbo" : " ",
           "vestuario" : " "
         }
     ```
