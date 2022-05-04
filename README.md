@@ -56,7 +56,7 @@ Categorias listadas mais abaixo.
       ```
       http://localhost:8080/api/stop/letra/<LETRA>
       ```
-      Obs.: No <LETRA> do link acima você deverá substituir pela letra do alfabeto que espera obter a resposta, exemplo:
+      Obs.: No < LETRA > do link acima você deverá substituir pela letra do alfabeto que espera obter a resposta, exemplo:
       ```
       http://localhost:8080/api/stop/letra/a
       ```
