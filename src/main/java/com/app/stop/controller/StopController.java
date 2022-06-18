@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("api/stop")
@@ -19,13 +21,23 @@ public class StopController {
         this.stopRepository = stopRepository;
     }
 
-    @GetMapping("/letra/{id}")
-    public Stop readAll(@PathVariable String id){
+    @GetMapping("/caracter/{id}")
+    public Stop readId(@PathVariable String id){
 
         return stopRepository.findById(id).orElseThrow( ()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Not Found"));
     }
 
+    @GetMapping("/read")
+    public List<Stop> readAll(){
+        return stopRepository.findAll();
+    }
 
+    @GetMapping("/teste")
+    public List<Stop> readAllTeste(){
+        return stopRepository.findAll();
+    }
+
+    
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public Stop create(@RequestBody Stop letras){
