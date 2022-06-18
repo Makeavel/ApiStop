@@ -21,7 +21,7 @@ public class StopController {
         this.stopRepository = stopRepository;
     }
 
-    @GetMapping("/letra/{id}")
+    @GetMapping("/caracter/{id}")
     public Stop readId(@PathVariable String id){
 
         return stopRepository.findById(id).orElseThrow( ()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Not Found"));
