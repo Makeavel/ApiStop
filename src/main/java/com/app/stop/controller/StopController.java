@@ -33,7 +33,7 @@ public class StopController {
     }
 
     @GetMapping("/teste")
-    public List<Stop> readAll(){
+    public List<Stop> readAllTeste(){
         return stopRepository.findAll();
     }
 
