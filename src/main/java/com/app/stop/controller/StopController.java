@@ -27,7 +27,7 @@ public class StopController {
         return stopRepository.findById(id).orElseThrow( ()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Not Found"));
     }
 
-    @GetMapping("/read")
+    @GetMapping("/")
     public List<Stop> readAll(){
         return stopRepository.findAll();
     }
