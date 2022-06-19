@@ -13,7 +13,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
             http
                     .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/api/stop/**")
+                .antMatchers("/**")
                 .permitAll()      
                 .anyRequest().authenticated()
                 .and()
