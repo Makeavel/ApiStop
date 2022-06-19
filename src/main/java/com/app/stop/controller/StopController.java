@@ -32,11 +32,6 @@ public class StopController {
         return stopRepository.findAll();
     }
 
-    @GetMapping("/teste")
-    public List<Stop> readAllTeste(){
-        return stopRepository.findAll();
-    }
-
     
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
