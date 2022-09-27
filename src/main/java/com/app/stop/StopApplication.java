@@ -10,4 +10,6 @@ public class StopApplication {
         SpringApplication.run(StopApplication.class, args);
     }
 
+    
+
 }
