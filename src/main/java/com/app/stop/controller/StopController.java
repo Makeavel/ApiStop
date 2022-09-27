@@ -16,14 +16,21 @@ public class StopController {
 
     @Autowired
     private final StopRepository stopRepository;
+    @Autowired
+    private StopService service;
 
     public StopController(StopRepository stopRepository) {
         this.stopRepository = stopRepository;
     }
 
+    @PostMapping("/create")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Stop create(@RequestBody Stop letras){
+        return stopRepository.save(letras);
+    }
+
     @GetMapping("/caracter/{id}")
     public Stop readId(@PathVariable String id){
-
         return stopRepository.findById(id).orElseThrow( ()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Not Found"));
     }
 
@@ -32,12 +39,10 @@ public class StopController {
         return stopRepository.findAll();
     }
 
-    
-    @PostMapping("/create")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Stop create(@RequestBody Stop letras){
-
-        return stopRepository.save(letras);
+    @GetMapping("/{nome}")
+    public Stop readNome(@PathVariable String nome){
+        return service.findNome(nome);
     }
+    
 
 }
